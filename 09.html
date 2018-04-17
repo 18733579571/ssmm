@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        div{
+            width: 300px;
+            height: 200px;
+            border: 3px solid red;
+        }
+        p{
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery-1.12.1.js"></script>
+    <script>
+        //如果用bind绑定事件,建议用unbind解绑
+        //如果用delegate绑定事件,建议用undelegate解绑
+        //如果用on绑定事件,建议用off解绑
+        //所有的都可以使用off解绑
+
+
+
+        //页面加载
+        $(function () {
+            $('#btn1').click(function () {
+                $('#dv p').on('click',function () {
+                    console.log('aaaa');
+                }).on('mouseenter',function () {
+                    $(this).css('backgroundColor','red');
+                }).on('mouseleave',function () {
+                    $(this).css('backgroundColor','');
+                })
+            });
+
+            $('#btn2').click(function () {
+                $('#dv p').off('mouseenter mouseleave');
+
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="绑定事件" id="btn1"/>
+<input type="button" value="解绑事件" id="btn2"/>
+<div id="dv">
+    <p>阅尽代码无数,心中自然无码</p>
+    <span>这是span标签</span>
+</div>
+</body>
+</html>

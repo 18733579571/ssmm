@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+            border: 3px solid red;
+        }
+
+        p {
+            cursor: pointer;
+            background-color: green;
+        }
+    </style>
+    <script src="jquery-1.12.1.js"></script>
+    <script>
+        //delegate的方式绑定事件
+
+        //页面加载
+        $(function () {
+            $('#btn1').click(function () {
+                $('#dv').delegate('p','click',function () {
+                    console.log('aaaa');
+                });
+            });
+            $('#btn2').click(function () {
+                $('<p>ppppp</p>').appendTo($('#dv'));
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="为div中p绑定点击事件" id="btn1"/>
+<input type="button" value="为div中添加p标签" id="btn2"/>
+<div id="dv">
+    <p>第一个p</p>
+</div>
+
+</body>
+</html>

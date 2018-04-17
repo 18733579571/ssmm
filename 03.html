@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script src='jquery-1.12.1.js'></script>
+<script>
+    $(function () {
+        //$('#btn').click(function () {
+        //    console.log('aaaa');
+        //}).click(function () {
+        //    console.log('bbbb');
+        //}).click(function () {
+        //    console.log('cccc');
+        //}).click(function () {
+        //    console.log('dddd');
+        //});
+
+
+        //$('#btn').bind('click',function () {
+        //    console.log('aaaa');
+        //}).bind('click',function () {
+        //    console.log('bbbb');
+        //}).bind('click',function () {
+        //    console.log('cccc');
+        //}).bind('click',function () {
+        //    console.log('dddd');
+        //});
+
+
+        $('#btn').bind({'click':function () {
+            console.log('aaaa');
+        },'mouseenter':function () {
+            $(this).css('backgroundColor','red');
+        },'mouseleave':function () {
+            $(this).css('backgroundColor','');
+        }});
+    });
+</script>
+<body>
+<input type="button" value='按钮' id='btn'/>
+</body>
+</html>

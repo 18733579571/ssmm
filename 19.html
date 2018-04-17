@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        div{
+            width: 300px;
+            height: 200px;
+            border: 3px solid red;
+        }
+    </style>
+    <script src="jquery-1.12.1.js"></script>
+    <script>
+       $(function () {
+           $('#btn').click(function () {
+
+               if($('#p1').length == 0){
+                   var obj = $('<p>ppppp</p>');
+                   obj.attr('id','p1');
+                   obj.appendTo($('#dv'));
+               };
+
+           });
+       });
+    </script>
+</head>
+<body>
+<input type="button" value="创建一个p" id="btn"/>
+<div id="dv"></div>
+
+</body>
+</html>

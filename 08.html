@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        div{
+            width: 300px;
+            height: 200px;
+            border: 3px solid red;
+        }
+        p{
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery-1.12.1.js"></script>
+    <script>
+        //页面加载
+        $(function () {
+            $('#btn1').click(function () {
+                $('#dv').delegate('p','click',function () {
+                    console.log('aaaaa');
+                });
+                $('#dv').delegate('p','mouseenter',function () {
+                    $(this).css('backgroundColor','red');
+                });
+                $('#dv').delegate('p','mouseleave',function () {
+                    $(this).css('backgroundColor','');
+                });
+            });
+            $('#btn2').click(function () {
+                $('#dv').undelegate('p','mouseenter mouseleave');
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="绑定事件" id="btn1"/>
+<input type="button" value="解绑事件" id="btn2"/>
+<div id="dv">
+    <p>阅尽代码无数,心中自然无码</p>
+</div>
+</body>
+</html>

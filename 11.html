@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        div {
+            width: 800px;
+            height: 600px;
+            background-color: pink;
+        }
+    </style>
+    <script src="jquery-1.12.1.js"></script>
+    <script>
+        $(function () {
+            $(document).keydown(function (e) {
+                switch (e.keyCode) {
+                    case 65:
+                        $('#dv').css('backgroundColor','red');
+                        break;
+                    case 66:
+                        $('#dv').css('backgroundColor','green');
+                        break;
+                    case 67:
+                        $('#dv').css('backgroundColor','blue');
+                        break;
+                    case 68:
+                        $('#dv').css('backgroundColor','yellow');
+                        break;
+                    case 69:
+                        $('#dv').css('backgroundColor','orange');
+                        break;
+                };
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div id="dv"></div>
+</body>
+</html>

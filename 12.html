@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <script src="jquery-1.12.1.js"></script>
+    <script>
+        //页面加载
+        $(function () {
+            $('#txt').focus(function () {
+                $(this).next().text('此时文本框获取焦点事件触发了');
+            });
+
+            $('#btn').click(function () {
+               // $('#txt').focus();
+                //$('#txt').trigger();
+                $('#txt').triggerHandler('focus');
+                //不会触发浏览器的默认行为；
+            })
+
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="触发文本框获取焦点的事件" id="btn"/>
+<input type="text" value="" id="txt" /><span id="sp"></span>
+
+</body>
+</html>

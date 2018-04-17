@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <script src="jquery-1.12.1.js"></script>
+    <script>
+        $(function () {
+            $('#btn').click(function () {
+                //所有input标签有name属性的
+                $('input[name]')
+                //所有input标签有id属性的
+                $('input[id]')
+                //所有input标签中name属性是userName的
+                $('input[name=userName]')
+                //不等
+                $('input[name!=userName]')
+                //开头
+                $('input[name^=p]')
+                //结尾
+                $('input[name$=e]')
+                //所有带u的
+                $('input[name*=u]')
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="按钮" id="btn"/>
+<input type="text" value="文本框" name="userName" id="t1"/>
+<input type="text" value="文本框" name="userPwd"/>
+<input type="text" value="文本框" id="t3"/>
+<input type="text" value="文本框" name="piaoliang" id="t4"/>
+
+
+</body>
+</html>
